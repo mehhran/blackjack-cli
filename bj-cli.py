@@ -117,36 +117,25 @@ def WonBet(player, bet):
 	player.bankroll += bet
 
 def deal_player(cards, deck):
-
-	while True:
-		
-		choice = input('hit or stay?')
-		
+	while True:		
+		choice = input('hit or stay?')		
 		if choice == 'hit':
 			cards.append(deck.pop())
-
 			ShowCards(cards)
-
 			if NumberValue(cards) > 21:
 				print('BUST!')
-				return 'BUST'
-		
+				return 'BUST'		
 		elif choice == 'stay':
 			return 'STICK'
 
-def deal_dealer(cards, deck):
-	
-	while True:
-		
-		if NumberValue(cards) >= 17:
-			
+def deal_dealer(cards, deck):	
+	while True:		
+		if NumberValue(cards) >= 17:			
 			if NumberValue(cards) > 21:
 				print('BUST!')
-				return 'BUST'
-			
+				return 'BUST'			
 			else:
 				return 'STICK'
-
 		else:
 			cards.append(deck.pop())
 			ShowCards(cards)
@@ -158,28 +147,21 @@ def replay():
 """
 Gameplay
 """
-
 #Main Menu
 
 #define player
 player = Player(input("What's your name?"), int(input("Your Bankroll?(integer)")))
 
-
-
 while True:
-#game start
-	
-	print(player)
+#game start	
+	print(player)	
 
-	while True:
-	
+	while True:	
 		#define deck
 		deck = NewDeck()
 		# shuffle the deck
 		random.shuffle(deck)
 		
-		#play game -->
-
 		#player bet
 		bet = PlaceBet(player)
 
@@ -216,8 +198,6 @@ while True:
 			WonBet(player, bet)
 			break
 
-
 	if replay() == 'n':
 		print('Game Over.')
 		break
-	#replay() 
