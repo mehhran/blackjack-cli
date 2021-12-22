@@ -70,8 +70,8 @@ def NewHand(deck):
 
 def NumberValue(cards):
 	'''
-	first sums up all non_ace cards
-	then check each ace with 11 value, if reaches over 21, makes the value 1
+	first sums up all non-ace cards
+	then check each ace with the value 11, if reaches over 21, change the value to 1
 	arguments: list of cards
 	'''
 	sum = 0
